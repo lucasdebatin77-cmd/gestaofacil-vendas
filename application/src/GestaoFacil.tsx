@@ -6,7 +6,6 @@ import type { OrgSummary } from './V02';
 import BrandIdentity from './BrandIdentity';
 import PremiumDashboard from './PremiumDashboard';
 import ArenaExperience from './ArenaExperience';
-import './v02.css';
 import {
   Activity,
   ArrowDownRight,
@@ -631,7 +630,7 @@ export default function GestaoFacil() {
               {headerAction}
             </div>
           </header>
-          <main>
+          <main id="gf-main" tabIndex={-1}>
             {publicRoute ? (
               <PublicExperience
                 route={publicRoute}
@@ -949,6 +948,7 @@ export default function GestaoFacil() {
                 </button>
                 <button
                   className="close-side"
+                  aria-label="Fechar navegação"
                   onClick={() => setMenuOpen(false)}
                 >
                   <X size={20} />
@@ -1079,6 +1079,8 @@ export default function GestaoFacil() {
               <header className="work-header">
                 <button
                   className="mobile-menu"
+                  aria-label="Abrir navegação"
+                  aria-expanded={menuOpen}
                   onClick={() => setMenuOpen(true)}
                 >
                   <Menu size={22} />
@@ -1103,6 +1105,7 @@ export default function GestaoFacil() {
                   </button>
                   <button
                     className="avatar"
+                    aria-label="Configurações da minha loja"
                     onClick={() => navigate('profile')}
                   >
                     {(user?.name || user?.email || 'U')
@@ -1111,7 +1114,7 @@ export default function GestaoFacil() {
                   </button>
                 </div>
               </header>
-              <main className="work-content">
+              <main className="work-content" id="gf-main" tabIndex={-1}>
                 {workspaceLoading && <div className="lux-work-loading" role="status"><Sparkles size={18} /> Atualizando dados da empresa selecionada...</div>}
                 {role === 'viewer' && <div className="v2-readonly">Acesso de visualização: você pode consultar os dados desta empresa, mas não alterar produtos, links ou lançamentos.</div>}
                 {view === 'dashboard' && !workspaceLoading && (
@@ -1791,7 +1794,7 @@ export default function GestaoFacil() {
           className="modal-backdrop"
           onClick={() => setShowProductForm(false)}
         >
-          <div className="form-modal" onClick={e => e.stopPropagation()}>
+          <div className="form-modal" role="dialog" aria-modal="true" aria-label={editing ? 'Editar produto' : 'Cadastrar produto'} onClick={e => e.stopPropagation()}>
             <div className="modal-heading">
               <div>
                 <span className="page-kicker">CATÁLOGO DA SUA CONTA</span>
@@ -1799,6 +1802,7 @@ export default function GestaoFacil() {
               </div>
               <button
                 className="modal-close-static"
+                aria-label="Fechar formulário de produto"
                 onClick={() => setShowProductForm(false)}
               >
                 <X size={20} />
@@ -1946,6 +1950,7 @@ export default function GestaoFacil() {
         <div className="modal-backdrop" onClick={() => setShowLinkForm(false)}>
           <div
             className="form-modal small-modal"
+            role="dialog" aria-modal="true" aria-label="Adicionar link"
             onClick={e => e.stopPropagation()}
           >
             <div className="modal-heading">
@@ -1955,6 +1960,7 @@ export default function GestaoFacil() {
               </div>
               <button
                 className="modal-close-static"
+                aria-label="Fechar formulário de link"
                 onClick={() => setShowLinkForm(false)}
               >
                 <X size={20} />
@@ -2025,6 +2031,7 @@ export default function GestaoFacil() {
         >
           <div
             className="form-modal small-modal"
+            role="dialog" aria-modal="true" aria-label="Novo lançamento"
             onClick={e => e.stopPropagation()}
           >
             <div className="modal-heading">
@@ -2034,6 +2041,7 @@ export default function GestaoFacil() {
               </div>
               <button
                 className="modal-close-static"
+                aria-label="Fechar formulário financeiro"
                 onClick={() => setShowFinanceForm(false)}
               >
                 <X size={20} />

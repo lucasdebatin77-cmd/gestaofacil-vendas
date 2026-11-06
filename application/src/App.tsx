@@ -1,12 +1,7 @@
+import './commerce-ui.css';
 import GestaoFacil from './GestaoFacil';
-import './gestao.css';
-import './arena-experience.css';
-import './brand-identity.css';
-import './premium-system.css';
-import './arena-signature.css';
-import './visual-refinement.css';
 
 export default function App() {
-  return <GestaoFacil />;
+  return <><a className="gf-skip-link" href="#gf-main">Pular para o conteúdo</a><GestaoFacil /></>;
 }
 

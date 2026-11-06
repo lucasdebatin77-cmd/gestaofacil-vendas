@@ -167,7 +167,7 @@ export default function ArenaExperience({
     <div className="ar-grain" aria-hidden="true"/>
     <header className={'ar-navbar '+(scrolled?'is-scrolled':'')}>
       <div className="ar-container ar-nav-inner">
-        <button type="button" className="ar-brand-button" onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}><BrandMark/></button>
+        <button type="button" className="ar-brand-button" aria-label="GestãoFácil Vendas, início" onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}><BrandMark/></button>
         <nav className="ar-nav-links" aria-label="Navegação principal">
           {menuItems.map(item=><button key={item.id} onClick={()=>goTo(item.id)}>{item.label}</button>)}
         </nav>
@@ -175,16 +175,16 @@ export default function ArenaExperience({
           <button className="ar-navbar-cta" disabled={!authReady} onClick={isSignedIn?onEnter:onSignIn}>
             {isSignedIn?'Meu painel':'Entrar na plataforma'}<ArrowUpRight size={15}/>
           </button>
-          <button className="ar-menu-toggle" aria-label={menuOpen?'Fechar menu':'Abrir menu'} onClick={()=>setMenuOpen(!menuOpen)}>{menuOpen?<X size={21}/>:<Menu size={21}/>}</button>
+          <button className="ar-menu-toggle" aria-label={menuOpen?'Fechar menu':'Abrir menu'} aria-expanded={menuOpen} aria-controls="ar-mobile-menu" onClick={()=>setMenuOpen(!menuOpen)}>{menuOpen?<X size={21}/>:<Menu size={21}/>}</button>
         </div>
       </div>
-      {menuOpen&&<div className="ar-mobile-nav">
+      {menuOpen&&<div className="ar-mobile-nav" id="ar-mobile-menu">
         {menuItems.map(item=><button key={item.id} onClick={()=>goTo(item.id)}>{item.label}<ArrowRight size={15}/></button>)}
         <button onClick={()=>{setMenuOpen(false);isSignedIn?onEnter():onSignIn();}}>Acessar plataforma<ArrowUpRight size={15}/></button>
       </div>}
     </header>
 
-    <main>
+    <main id="gf-main" tabIndex={-1}>
       <section className="ar-hero" id="top" ref={heroRef}>
         <div className="ar-aurora ar-aurora-one"/><div className="ar-aurora ar-aurora-two"/><div className="ar-aurora ar-aurora-three"/>
         <div className="ar-hero-grid"/>
@@ -205,7 +205,7 @@ export default function ArenaExperience({
               <button className="ar-btn ar-btn-outline" onClick={()=>goTo('catalogo')}>Explorar marketplace <ArrowRight size={17}/></button>
             </div>
             <div className="ar-hero-foot">
-              <span className="ar-avatar-cluster"><i/><i/><i/><i/></span>
+              <span className="ar-avatar-cluster" aria-hidden="true"><i/><i/><i/><i/></span>
               <span>Produtos próprios e de afiliados <strong>em um só lugar</strong></span>
             </div>
             <div className="ar-hero-disclosure"><ShieldCheck size={15}/> Dados reais cadastrados por usuários; nenhuma venda ou comissão simulada.</div>
