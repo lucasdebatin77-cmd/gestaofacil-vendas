@@ -1997,4 +1997,161 @@ footer button {
   }
   .feature-section {
     padding: 70px 18px;
-    gap: 30px;
+    gap: 30px;  }
+  .feature-list > div {
+    gap: 12px;
+  }
+  .feature-list > div > span {
+    height: 44px;
+    min-width: 44px;
+    width: 44px;
+  }
+  .end-cta {
+    padding: 74px 20px;
+  }
+  footer {
+    padding: 26px 18px;
+    flex-wrap: wrap;
+  }
+  footer > span {
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+  .work-header {
+    height: 68px;
+    padding: 0 16px;
+  }
+  .build-label {
+    display: none;
+  }
+  .work-header-right {
+    gap: 9px;
+  }
+  .work-content {
+    padding: 25px 16px;
+  }
+  .page-intro {
+    align-items: flex-start;
+    gap: 18px;
+    flex-direction: column;
+    margin-bottom: 22px;
+  }
+  .page-intro h1 {
+    font-size: 29px;
+  }
+  .page-intro > button {
+    width: 100%;
+  }
+  .page-intro p {
+    font-size: 12px;
+  }
+  .stat-grid {
+    gap: 10px;
+  }
+  .stat-grid.compact {
+    grid-template-columns: 1fr;
+  }
+  .stat-card {
+    padding: 16px;
+  }
+  .stat-card > div {
+    font-size: 10px;
+  }
+  .stat-card strong {
+    font-size: 24px;
+    margin: 13px 0 8px;
+  }
+  .stat-card strong.money-stat {
+    font-size: 17px;
+  }
+  .stat-card small {
+    font-size: 9px;
+  }
+  .panel-head,
+  .compact-row,
+  .link-row,
+  .finance-row,
+  .radar-row {
+    padding: 15px;
+  }
+  .panel-head h3 {
+    font-size: 13px;
+  }
+  .compact-row {
+    gap: 9px;
+  }
+  .status {
+    font-size: 9px;
+  }
+  .radar-explain {
+    padding: 22px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .radar-orbit {
+    height: 55px;
+    width: 55px;
+    min-width: 55px;
+  }
+  .radar-orbit svg {
+    width: 25px;
+  }
+  .radar-explain h2 {
+    font-size: 19px;
+  }
+  .weights-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .weight {
+    padding: 13px;
+  }
+  .weight strong {
+    font-size: 10px;
+  }
+  .integration-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  .field.full {
+    grid-column: auto;
+  }
+  .form-footer {
+    padding: 18px 16px;
+  }
+  .form-tip {
+    margin: 0 16px;
+  }
+  .modal-heading {
+    padding: 20px 16px 0;
+  }
+  .detail-modal {
+    display: block;
+  }
+  .detail-image {
+    height: 190px;
+    min-height: 190px;
+  }
+  .detail-content {
+    padding: 25px 20px;
+  }
+  .link-row,
+  .finance-row {
+    flex-wrap: wrap;
+  }
+  .link-row > div,
+  .finance-row > div {
+    min-width: 150px;
+  }
+  .radar-status {
+    font-size: 10px;
+  }
+  .radar-status small {
+    font-size: 9px;
+  }
+}
+

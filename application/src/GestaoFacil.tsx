@@ -1997,4 +1997,132 @@ export default function GestaoFacil() {
               <label className="field full">
                 <span>Link de afiliado gerado pela plataforma *</span>
                 <input
-                  value={linkForm.affiliateUrl}
+                  value={linkForm.affiliateUrl}                  onChange={e =>
+                    setLinkForm({ ...linkForm, affiliateUrl: e.target.value })
+                  }
+                  placeholder="https://..."
+                />
+              </label>
+            </div>
+            <div className="form-footer">
+              <button
+                className="btn-cancel"
+                onClick={() => setShowLinkForm(false)}
+              >
+                Cancelar
+              </button>
+              <button className="work-button" onClick={addLink} disabled={busy}>
+                Salvar link <ArrowRight size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {showFinanceForm && canWrite && (
+        <div
+          className="modal-backdrop"
+          onClick={() => setShowFinanceForm(false)}
+        >
+          <div
+            className="form-modal small-modal"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="modal-heading">
+              <div>
+                <span className="page-kicker">FINANCEIRO MANUAL</span>
+                <h2>Novo lançamento</h2>
+              </div>
+              <button
+                className="modal-close-static"
+                onClick={() => setShowFinanceForm(false)}
+              >
+                <X size={20} />
+              </button>
+            </div>
+            <div className="form-grid">
+              <label className="field full">
+                <span>Descrição *</span>
+                <input
+                  value={financeForm.name}
+                  onChange={e =>
+                    setFinanceForm({ ...financeForm, name: e.target.value })
+                  }
+                  placeholder="Ex.: Hospedagem do site"
+                />
+              </label>
+              <label className="field">
+                <span>Tipo</span>
+                <select
+                  value={financeForm.kind}
+                  onChange={e =>
+                    setFinanceForm({ ...financeForm, kind: e.target.value })
+                  }
+                >
+                  <option value="income">Entrada</option>
+                  <option value="expense">Despesa</option>
+                </select>
+              </label>
+              <label className="field">
+                <span>Valor R$ *</span>
+                <input
+                  type="number"
+                  min="0.01"
+                  step="0.01"
+                  value={financeForm.amount}
+                  onChange={e =>
+                    setFinanceForm({ ...financeForm, amount: e.target.value })
+                  }
+                  placeholder="100.00"
+                />
+              </label>
+            </div>
+            <div className="form-tip">
+              <ShieldCheck size={17} /> Lançamento manual. Não confirma
+              pagamento, venda nem comissão.
+            </div>
+            <div className="form-footer">
+              <button
+                className="btn-cancel"
+                onClick={() => setShowFinanceForm(false)}
+              >
+                Cancelar
+              </button>
+              <button
+                className="work-button"
+                onClick={addFinance}
+                disabled={busy}
+              >
+                Salvar lançamento <ArrowRight size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {deleteAsk && (
+        <div className="modal-backdrop" onClick={() => setDeleteAsk(null)}>
+          <div className="confirm-modal" onClick={e => e.stopPropagation()}>
+            <span className="danger-icon">
+              <Trash2 size={23} />
+            </span>
+            <h2>Excluir este registro?</h2>
+            <p>Essa ação é permanente e não pode ser desfeita.</p>
+            <div className="form-footer">
+              <button className="btn-cancel" onClick={() => setDeleteAsk(null)}>
+                Cancelar
+              </button>
+              <button
+                className="btn-danger"
+                onClick={confirmDelete}
+                disabled={busy}
+              >
+                Excluir registro
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      <Alert value={notice} clear={() => setNotice('')} />
+    </div>
+  );
+}
+
