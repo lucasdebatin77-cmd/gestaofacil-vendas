@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Símbolo triangular GestãoFácil Vendas">
+<defs>
+<linearGradient id="sky" x1=".1" y1="0" x2=".85" y2="1"><stop offset="0" stop-color="#00F5F9"/><stop offset=".29" stop-color="#008FEA"/><stop offset=".57" stop-color="#2C32A9"/><stop offset=".77" stop-color="#BD24FF"/><stop offset="1" stop-color="#FA8A11"/></linearGradient>
+<linearGradient id="left" x1=".2" y1="0" x2=".85" y2="1"><stop offset="0" stop-color="#00E9FF"/><stop offset=".23" stop-color="#098CFB"/><stop offset=".47" stop-color="#4D2CCD"/><stop offset=".66" stop-color="#E848B1"/><stop offset=".84" stop-color="#FFAA17"/><stop offset="1" stop-color="#2536B8"/></linearGradient>
+<linearGradient id="right" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0061F7"/><stop offset=".32" stop-color="#282296"/><stop offset=".54" stop-color="#D829D9"/><stop offset=".72" stop-color="#FF8319"/><stop offset=".86" stop-color="#FFDA25"/><stop offset="1" stop-color="#06E8FF"/></linearGradient>
+<linearGradient id="base" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#04E8FF"/><stop offset=".16" stop-color="#0875F4"/><stop offset=".38" stop-color="#4212BF"/><stop offset=".54" stop-color="#FA2CEC"/><stop offset=".72" stop-color="#4F32E0"/><stop offset="1" stop-color="#00F0FA"/></linearGradient>
+<linearGradient id="rim" x1=".05" y1=".3" x2="1" y2=".7"><stop offset="0" stop-color="#03EFFF"/><stop offset=".24" stop-color="#2870FE"/><stop offset=".5" stop-color="#A333F9"/><stop offset=".78" stop-color="#FFC42B"/><stop offset="1" stop-color="#F17E14"/></linearGradient>
+<linearGradient id="spectrum" x1="0" y1="0" x2="1" y2=".5"><stop offset="0" stop-color="#08BDFF"/><stop offset=".20" stop-color="#2E55FF"/><stop offset=".36" stop-color="#A326E5"/><stop offset=".53" stop-color="#FC2FD9"/><stop offset=".77" stop-color="#FBB631"/><stop offset="1" stop-color="#01C9FE"/></linearGradient>
+<linearGradient id="highlight" x1=".1" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".8"/><stop offset=".25" stop-color="#D2F7FF" stop-opacity=".3"/><stop offset="1" stop-color="#FEA200" stop-opacity="0"/></linearGradient>
+</defs>
+<path d="M65 385 218 103 Q249 45 280 68 L309 88 256 177 164 365 Q147 397 116 406Z" fill="url(#left)"/>
+<path d="M218 103 Q249 45 280 68 Q297 75 315 104 L429 333 Q460 394 423 423 L388 435 340 365 274 166 263 151 Q259 139 256 127 Z" fill="url(#right)"/>
+<path d="M66 380 Q53 416 78 440 Q89 453 115 453 L390 453 Q431 453 434 416 L419 391 128 386 Z" fill="url(#base)"/>
+<path d="M213 111 251 76 Q273 58 289 93 L257 153 172 296 120 375 75 383 143 272Z" fill="url(#sky)" opacity=".89"/>
+<path d="M77 386 176 275 243 177 216 242 144 378Z" fill="#FFB530" opacity=".68"/>
+<path d="M303 100 416 347 434 402 Q435 418 417 429 L384 398 308 210 270 160Z" fill="url(#right)" opacity=".9"/>
+<path d="M344 269 413 392 393 395 309 204Z" fill="#FDB729" opacity=".87"/>
+<path d="M77 402 169 400 372 400 419 403 435 420 Q428 453 386 452 L125 451 Q88 449 76 423Z" fill="url(#spectrum)" opacity=".95"/>
+<path d="M79 415 243 414 387 445 106 446 Q88 442 79 415Z" fill="#051534" opacity=".36"/>
+<path d="M180 430 267 403 366 444 249 448Z" fill="#C525FC" opacity=".46"/>
+<path d="M255 150 383 396 123 396Z" fill="#04071C"/>
+<path d="M255 198 349 376 163 376Z" fill="none" stroke="url(#rim)" stroke-width="15" stroke-linejoin="miter"/>
+<path d="M255 210 336 369 172 369Z" fill="#071026"/>
+<path d="M253 200 347 379" stroke="url(#highlight)" stroke-width="3" opacity=".75"/>
+<path d="M175 378 348 378" stroke="url(#spectrum)" stroke-width="4" opacity=".8"/>
+<path d="M219 101 280 68 M75 384 158 367 M278 69 315 104" fill="none" stroke="#B2FFFF" stroke-width="2" opacity=".42"/>
+<path d="M89 410 398 410 M121 446 385 446" fill="none" stroke="#6AE7FF" stroke-width="1.6" opacity=".44"/>
+<path d="M312 168 396 363 M133 359 216 207" fill="none" stroke="#EECAFF" stroke-width="1.8" opacity=".33"/>
+</svg>

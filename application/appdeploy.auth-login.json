@@ -1,0 +1,13 @@
+{
+  "headline": "GestãoFácil Vendas",
+  "subtitle": "Seu ecossistema de marketplace e gestão comercial.",
+  "style": {
+    "mode": "dark",
+    "accentColor": "#387DFF",
+    "backgroundColor": "#060A20",
+    "panelColor": "#111A31",
+    "textColor": "#EFF3FF",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "borderRadius": 14
+  }
+}

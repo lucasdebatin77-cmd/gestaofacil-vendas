@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Criar e alternar empresas com vitrine pública",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "organizações",
+      "GET/POST /api/v2/organizations",
+      "GET /api/v2/workspace",
+      "PUT /api/v2/profile",
+      "POST /api/v2/products",
+      "publicação de produtos",
+      "GET /api/v2/catalog",
+      "GET /api/v2/stores/:id",
+      "GET /api/v2/public/products/:id",
+      "premium company selector",
+      "workspace refresh with loading",
+      "catalog cursor pagination",
+      "Arena landing search",
+      "Arena visual and product card to public details",
+      "premium executive dashboard navigation",
+      "responsive premium sidebar grouping",
+      "product thumbnail table",
+      "Arena original workflow sections",
+      "public landing with real catalog",
+      "Como funciona / FAQ navigation"
+    ],
+    "description": "Uma conta administra duas empresas com dados independentes, site público de loja e produto compartilhável.",
+    "steps": [
+      "Abrir landing pública deslogado e inspecionar navegação para Como funciona e FAQ.",
+      "Abrir a landing visual Arena no marketplace, rolar até o catálogo e conferir que não há números fictícios",
+      "Entrar e configurar nome da loja original",
+      "Clicar + em Empresa ativa e criar Empresa QA como PJ",
+      "Na empresa QA, cadastrar Produto QA com link HTTPS e publicar",
+      "Abrir a vitrine e o detalhe compartilhável; recarregar a página",
+      "Voltar ao painel, trocar para empresa original e confirmar que Produto QA não está lá",
+      "Abrir seletor premium e alternar de novo entre as empresas, verificando os indicadores e a persistência",
+      "Abrir o dashboard executivo com empresa ativa: confirmar os quatro indicadores reais, lista de produtos e checklist da loja."
+    ],
+    "expected": "O painel executivo premium exibe apenas dados da empresa ativa e oferece navegação funcional; as vitrine e as páginas públicas permanecem acessíveis."
+  },
+  {
+    "name": "Convite, RBAC e revogação em dois usuários",
+    "viewport": "desktop",
+    "covers": [
+      "GET /api/v2/organizations/:id/members",
+      "POST /api/v2/organizations/:id/invites",
+      "GET/POST /api/v2/invites/:code",
+      "PUT/DELETE /api/v2/organizations/:id/members/:uid",
+      "viewer 403",
+      "editor role",
+      "convite antigo bloqueado após remoção",
+      "novo convite posterior à remoção"
+    ],
+    "description": "Dois atores autenticados validam convite restrito ao e-mail e a autorização no backend.",
+    "steps": [
+      "Ator A (owner) abre Equipe e acessos e cria convite viewer ao e-mail do Ator B",
+      "Ator B aceita pelo link autenticado como destinatário",
+      "Ator B tenta escrever em produtos e o servidor recusa com 403",
+      "Ator A muda B para editor e B consegue cadastrar um rascunho",
+      "Ator A remove B e B perde acesso à empresa",
+      "Ator B tenta reutilizar o link de convite antigo após a revogação",
+      "Ator A emite novo convite após a remoção; B pode voltar a entrar apenas com o novo convite"
+    ],
+    "expected": "Convites anteriores à revogação não readmitem o colaborador; somente novo convite após a remoção pode restabelecer o acesso. Restrições do backend são aplicadas."
+  },
+  {
+    "name": "Preservar legado e dados financeiros por empresa",
+    "viewport": "desktop",
+    "covers": [
+      "migração de registros V0.1",
+      "GET /api/v2/workspace",
+      "POST/DELETE /api/v2/links",
+      "POST/DELETE /api/v2/finances",
+      "isolamento de dados financeiros",
+      "premium links and finance surfaces",
+      "real manual balances and responsive tables"
+    ],
+    "description": "Mantém registros antigos e separa links e lançamentos em empresas diferentes.",
+    "steps": [
+      "Entrar na conta que possui dados V0.1 e confirmar que aparecem no espaço original",
+      "Cadastrar link de afiliado e URL original separados",
+      "Registrar entrada de R$ 100 e despesa de R$ 30",
+      "Criar nova empresa e confirmar que ela não mostra esses registros",
+      "Voltar à empresa original e atualizar a página",
+      "Conferir a nova apresentação visual de produtos, links e financeiro sem alteração dos valores salvos."
+    ],
+    "expected": "Registros antigos continuam no espaço original. Os novos links e movimentos manuais persistem e não aparecem na nova empresa."
+  },
+  {
+    "name": "Validação mobile e rotas públicas sem login",
+    "viewport": "mobile",
+    "covers": [
+      "validação de nome de produto",
+      "rejeição de URL não HTTPS",
+      "responsividade",
+      "páginas públicas",
+      "despublicação/remoção de produtos",
+      "catalog nextCursor and load-more",
+      "mobile company picker",
+      "Arena mobile navbar and responsive orbit",
+      "Arena search filters",
+      "landing CTA to auth",
+      "new dashboard mobile responsive",
+      "premium grouped sidebar",
+      "catalog row thumbnails and actions",
+      "FAQ responsive with expand/collapse",
+      "source-inspired mobile landing",
+      "visual-only responsive refinement at 375px and 768px with unchanged navigation and actions"
+    ],
+    "description": "Garante estados de erro e publicações compatíveis com celular.",
+    "steps": [
+      "Em celular abrir menu, navegar para Como funciona e Dúvidas, expandir e fechar FAQ.",
+      "Abrir a landing Arena no celular e usar o menu para acessar Marketplace e Radar",
+      "Em celular, entrar e abrir menu e Meus produtos",
+      "Tentar cadastrar produto sem título e com URL HTTP insegura",
+      "Cadastrar produto válido com HTTPS e publicá-lo",
+      "Abrir link público do produto sem autenticação",
+      "Despublicar produto e tentar abrir novamente o link",
+      "No marketplace, quando houver mais de uma página, utilizar Carregar mais produtos",
+      "Verificar dashboard, menu agrupado, botões e tabela de produtos no celular sem rolagem horizontal da página inteira."
+    ],
+    "expected": "Dados inválidos são recusados, o catálogo funciona em celular e produto despublicado mostra erro público em vez de continuar disponível."
+  },
+  {
+    "name": "Transparência Radar e dashboard multiempresa",
+    "viewport": "desktop",
+    "covers": [
+      "dashboard premium",
+      "Radar sem dados fictícios",
+      "integrações candidatas",
+      "papéis de usuário",
+      "desenho de loja",
+      "layout luxo champagne gold",
+      "responsive status premium",
+      "no misleading verified seal",
+      "Arena-inspired gold violet cyan design",
+      "cinematic orbit visual composition",
+      "real-data disclaimer",
+      "identidade triangular neon GestãoFácil Vendas no SaaS e no marketplace",
+      "favicon vetorial em /gestaofacil-symbol.svg",
+      "marca responsiva no desktop e celular",
+      "tema do login alinhado ao sistema",
+      "unified design tokens across all pages",
+      "identity neon consistent on storefront, product page, finance, radar and login",
+      "Arena editorial typography and visual layout",
+      "trust without unverified certifications",
+      "official neon logo",
+      "Arena hero pointer glow (desktop only)",
+      "scroll reveal with reduced motion support",
+      "orbital labels remain upright during animation",
+      "full-width footer and scoped landing styles preserve the SaaS layout"
+    ],
+    "description": "Visualiza status corretos, sem comissões/checkout não implementados.",
+    "steps": [
+      "Validar nova estrutura cinematográfica: ecossistema, processo, Radar, Inteligência, segurança e perguntas.",
+      "No marketplace, verificar o símbolo triangular e a assinatura GestãoFácil Vendas no cabeçalho e no rodapé.",
+      "Na página inicial, verificar o núcleo IA orbital e os três pilares no estilo Arena, sem métricas ou agentes ao vivo inventados",
+      "Entrar no dashboard, verificar banner da empresa ativa e métricas cadastradas",
+      "Trocar de empresa e conferir que indicadores pertencem ao contexto selecionado",
+      "Abrir Radar e Integrações",
+      "Abrir a vitrine pelo botão no dashboard ou Minha loja",
+      "Abrir o painel e conferir que a mesma marca aparece na navegação lateral e que o favicon usa o símbolo triangular.",
+      "Conferir que módulos, cards, formulários e vitrines seguem a mesma hierarquia tipográfica e usam detalhes neon com moderação.",
+      "Em desktop, mover o ponteiro pelo hero, verificar textos orbitais legíveis e rodapé sem estreitamento; com redução de movimento, confirmar ausência de animação obrigatória.",
+      "Confirmar que busca, filtros, botões de entrada, FAQ e acesso às páginas de produtos mantêm o comportamento anterior após a revisão visual."
+    ],
+    "expected": "Visual inspirado nos componentes originais do Arena; sem métricas inventadas nem selos de certificação não comprovados. Logo triangular preservada."
+  }
+]

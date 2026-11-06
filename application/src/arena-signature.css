@@ -1,0 +1,146 @@
+
+/* Arena reference reconstruction: process, governance and FAQ. */
+.arena-app {
+  --aro-paper:#f4efe6;
+  --aro-soft:#aeb6c8;
+  --aro-gold:#e9cfa0;
+  --aro-ribbon:linear-gradient(115deg,#35D4EC 0%,#348AFF 34%,#9575FF 69%,#E578C6 100%);
+}
+.arena-app .aro-section {position:relative;padding:116px 0;scroll-margin-top:74px;}
+.arena-app .aro-eyebrow {font-family:Inter,'Outfit',sans-serif;font-size:10px;letter-spacing:3px;}
+.arena-app .aro-reveal {transform:translateY(25px);opacity:0;transition:transform .9s cubic-bezier(.16,1,.3,1),opacity .9s ease;will-change:transform;}
+.arena-app .aro-reveal.aro-visible{opacity:1;transform:translateY(0);}
+.arena-app .aro-how {
+  background:radial-gradient(ellipse at 48% 0%,#8b6dff13,transparent 45%),linear-gradient(180deg,#080a13,#090b15);
+  border-block:1px solid #252c3b;
+  overflow:hidden;
+}
+.arena-app .aro-how:before{content:'';position:absolute;inset:0;opacity:.2;pointer-events:none;background-image:linear-gradient(#FFF1 1px,transparent 1px),linear-gradient(90deg,#FFF1 1px,transparent 1px);background-size:66px 66px;mask-image:linear-gradient(to bottom,black,transparent 75%);}
+.arena-app .aro-how-intro{text-align:center;max-width:740px;margin:0 auto;}
+.arena-app .aro-how-intro h2,.arena-app .aro-trust-copy h2,.arena-app .aro-faq-intro h2{
+  color:var(--aro-paper);
+  font:400 clamp(39px,4.6vw,65px)/1.03 'Cormorant Garamond',Georgia,serif;
+  letter-spacing:-.6px;margin:21px 0;
+}
+.arena-app .aro-how-intro h2 em,.arena-app .aro-trust-copy h2 em,.arena-app .aro-faq-intro h2 em{
+  font-style:italic;font-weight:500;
+  background:linear-gradient(100deg,#FAF0D9,#E9CFA0 47%,#C9A25A);
+  background-clip:text;-webkit-background-clip:text;color:transparent;
+}
+.arena-app .aro-how-intro p,.arena-app .aro-trust-copy>p,.arena-app .aro-faq-intro>p{color:var(--aro-soft);line-height:1.9;font-size:13px;}
+.arena-app .aro-steps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;margin-top:65px;}
+.arena-app .aro-steps-rail{position:absolute;top:42px;left:0;right:0;height:1px;pointer-events:none;background:repeating-linear-gradient(90deg,#e9cfa055 0 7px,transparent 7px 17px);}
+.arena-app .aro-step{position:relative;padding-top:2px;}
+.arena-app .aro-step-mark{
+  position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;
+  width:83px;height:83px;border-radius:19px;padding:15px;
+  border:1px solid #a5a6c449;
+  background:linear-gradient(140deg,#20223A,#121724);
+  color:var(--aro-gold);
+  box-shadow:0 17px 47px #0006;
+}
+.arena-app .aro-step-mark span{font:500 31px 'Cormorant Garamond',Georgia,serif;}
+.arena-app .aro-step-mark svg{color:#998dff;}
+.arena-app .aro-step h3{font:500 30px 'Cormorant Garamond',Georgia,serif;color:#f4efe6;margin:26px 0 12px;}
+.arena-app .aro-step p{line-height:1.85;font-size:12px;color:#aeb6c8;max-width:350px;}
+.arena-app .aro-how-action{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:54px;border:1px solid #e9cfa027;background:#ffffff04;border-radius:14px;padding:16px 18px;}
+.arena-app .aro-how-action span{display:flex;align-items:center;gap:10px;color:#a9b8cb;font-size:11px;}
+.arena-app .aro-how-action span svg{color:#8cddcb;flex-shrink:0;}
+.arena-app .aro-how-action button,.arena-app .aro-faq-intro button{
+  border:1px solid #9a8fff66;background:linear-gradient(100deg,#4341a53b,#29406b6f);border-radius:100px;padding:11px 16px;
+  display:flex;align-items:center;gap:10px;color:#d5daff;font-size:11px;font-weight:600;
+}
+.arena-app .aro-how-action button:hover,.arena-app .aro-faq-intro button:hover{border-color:#9dceff;color:white;transform:translateY(-1px);}
+.arena-app .aro-trust{background:radial-gradient(ellipse at 1% 50%,#58d6e613,transparent 45%),#070911;border-block:1px solid #242A3A;overflow:hidden;}
+.arena-app .aro-trust-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:80px;align-items:center;}
+.arena-app .aro-trust-copy>p{max-width:470px;}
+.arena-app .aro-assurances{display:flex;flex-direction:column;gap:17px;margin:30px 0;}
+.arena-app .aro-assurances>div{display:flex;align-items:flex-start;gap:13px;color:#d7dde8;font-size:12px;line-height:1.7;}
+.arena-app .aro-assurances>div>span{flex-shrink:0;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1px solid #58d6e659;background:#58d6e610;color:#69d7e5;}
+.arena-app .aro-trust-copy>small{display:block;color:#788496;font-size:10px;line-height:1.7;max-width:480px;}
+.arena-app .aro-trust-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;}
+.arena-app .aro-trust-card{
+  min-height:200px;padding:26px 21px;
+  border:1px solid #ffffff14;border-radius:19px;
+  background:linear-gradient(135deg,#ffffff0b,#ffffff03);
+  backdrop-filter:blur(10px);
+  transition:border-color .4s,transform .4s;
+}
+.arena-app .aro-trust-card:hover{border-color:#e9cfa04a;transform:translateY(-3px);}
+.arena-app .aro-trust-card-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:#e9cfa011;color:#e9cfa0;border:1px solid #e9cfa03a;}
+.arena-app .aro-trust-card h3{color:#f4efe6;font:500 23px 'Cormorant Garamond',Georgia,serif;margin:22px 0 7px;}
+.arena-app .aro-trust-card p{color:#aeb6c8;font-size:11px;line-height:1.75;margin:0;}
+.arena-app .aro-faq{background:radial-gradient(ellipse at 95% 28%,#8b6dff15,transparent 50%),#060811;}
+.arena-app .aro-faq-layout{display:grid;grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);gap:80px;align-items:start;}
+.arena-app .aro-faq-intro{position:sticky;top:112px;}
+.arena-app .aro-faq-intro>p{max-width:390px;}
+.arena-app .aro-faq-intro button{margin-top:29px;}
+.arena-app .aro-faq-items{border-top:1px solid #293041;}
+.arena-app .aro-faq-item{border-bottom:1px solid #293041;}
+.arena-app .aro-faq-item>button{display:flex;align-items:center;justify-content:space-between;gap:18px;text-align:left;width:100%;padding:23px 4px;border:0;background:transparent;color:#f4efe6;}
+.arena-app .aro-faq-item>button>span:first-child{font:500 22px/1.2 'Cormorant Garamond',Georgia,serif;}
+.arena-app .aro-faq-plus{flex-shrink:0;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid #393F54;color:#c9a25a;transition:transform .3s,border-color .3s;}
+.arena-app .aro-faq-plus-open{transform:rotate(180deg);border-color:#c9a25a;}
+.arena-app .aro-faq-answer{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .45s cubic-bezier(.16,1,.3,1),opacity .45s;}
+.arena-app .aro-faq-answer-open{grid-template-rows:1fr;opacity:1;}
+.arena-app .aro-faq-answer>div{min-height:0;overflow:hidden;}
+.arena-app .aro-faq-answer p{color:#aeb6c8;font-size:12px;line-height:1.9;max-width:620px;padding:0 48px 20px 4px;margin:0;}
+/* Restore the source design's editorial hierarchy on the public landing. */
+.arena-app .ar-hero h1{
+  font:400 clamp(59px,6.35vw,91px)/.96 'Cormorant Garamond',Georgia,serif;
+  letter-spacing:-1.6px;
+}
+.arena-app .ar-centered-heading h2,.arena-app .ar-section-heading h2,
+.arena-app .ar-radar-copy h2,.arena-app .ar-final h2{
+  font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;letter-spacing:-.6px;
+}
+.arena-app .ar-pillar h3,.arena-app .ar-agent h3,.arena-app .ar-catalog-empty h3{
+  font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;letter-spacing:-.3px;
+}
+.arena-app .ar-brand-identity .gf-brand-type{font-family:'Outfit','Inter',sans-serif;}
+.arena-app .ar-hero .ar-orbit-scene{filter:drop-shadow(0 20px 64px #0009);}
+.arena-app .ar-hero .ar-aurora-one{background:radial-gradient(circle,#8b6dff70,transparent 64%);}
+.arena-app .ar-hero .ar-aurora-two{background:radial-gradient(circle,#58d6e652,transparent 64%);}
+.arena-app .ar-hero .ar-aurora-three{background:radial-gradient(circle,#c9a25a3a,transparent 65%);}
+.arena-app .ar-pillar{position:relative;transform-style:preserve-3d;}
+.arena-app .ar-pillar:hover{box-shadow:0 28px 78px #0009,0 0 0 1px #e9cfa017;}
+.arena-app .ar-hero-glow{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.9;}
+.arena-app .ar-hero-layout{position:relative;z-index:3;}
+@media(max-width:950px){
+  .arena-app .aro-steps{gap:21px;}
+  .arena-app .aro-trust-grid,.arena-app .aro-faq-layout{gap:33px;}
+}
+@media(max-width:800px){
+  .arena-app .aro-section{padding:82px 0;}
+  .arena-app .aro-steps-rail{display:none;}
+  .arena-app .aro-steps{grid-template-columns:1fr;gap:28px;margin-top:46px;}
+  .arena-app .aro-step{border-bottom:1px solid #ffffff17;padding-bottom:20px;}
+  .arena-app .aro-step h3{margin-top:16px;}
+  .arena-app .aro-trust-grid,.arena-app .aro-faq-layout{grid-template-columns:1fr;}
+  .arena-app .aro-faq-intro{position:static;}
+  .arena-app .aro-trust-cards{grid-template-columns:repeat(2,1fr);}
+  .arena-app .ar-hero h1{font-size:clamp(57px,9vw,84px);}
+}
+@media(max-width:540px){
+  .arena-app .aro-section{padding:69px 0;}
+  .arena-app .aro-how-intro h2,.arena-app .aro-trust-copy h2,.arena-app .aro-faq-intro h2{font-size:43px;}
+  .arena-app .aro-how-intro>p{font-size:12px;}
+  .arena-app .aro-steps{gap:18px;}
+  .arena-app .aro-step-mark{width:70px;height:70px;}
+  .arena-app .aro-step h3{font-size:27px;}
+  .arena-app .aro-how-action{align-items:stretch;flex-direction:column;}
+  .arena-app .aro-how-action button{justify-content:center;}
+  .arena-app .aro-trust-cards{gap:10px;}
+  .arena-app .aro-trust-card{min-height:192px;padding:17px;}
+  .arena-app .aro-trust-card h3{font-size:20px;}
+  .arena-app .aro-trust-card p{font-size:10px;}
+  .arena-app .aro-faq-item>button{padding:17px 0;}
+  .arena-app .aro-faq-item>button>span:first-child{font-size:21px;}
+  .arena-app .aro-faq-answer p{font-size:11px;}
+  .arena-app .ar-hero h1{font-size:clamp(52px,12.5vw,70px);}
+}
+@media(prefers-reduced-motion:reduce){
+  .arena-app .aro-reveal{opacity:1;transform:none;transition:none;}
+  .arena-app .aro-faq-answer{transition:none;}
+}
+
