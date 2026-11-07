@@ -83,33 +83,14 @@ function ArrowLink({children,onClick,secondary=false}:{children:ReactNode;onClic
   </button>;
 }
 function OrbitVisual() {
-  return <div className="ar-orbit-scene" aria-hidden="true">
-    <div className="ar-orbit-glow"/>
-    <div className="ar-orbit-grid"/>
-    <div className="ar-orbit-circle ar-orbit-outer"/>
-    <div className="ar-orbit-circle ar-orbit-inner"/>
-    <div className="ar-orbit-core-wrap">
-      <div className="ar-orbit-core">
-        <div className="ar-radar-sweep"/>
-        <img className="gf-core-icon" src="/gestaofacil-symbol.svg" alt="" />
-        <small>ECOSSISTEMA</small>
-      </div>
-    </div>
-    <div className="ar-orbit-rotation">
-      {[
-        {deg:0,label:'Marketplace',sub:'Vitrine pública',icon:Store,color:'gold'},
-        {deg:120,label:'SaaS Comercial',sub:'Centro de comando',icon:Layers3,color:'violet'},
-        {deg:240,label:'Inteligência',sub:'Radar de produtos',icon:Radar,color:'cyan'}
-      ].map(item=>{
-        const Icon = item.icon;
-        return <div key={item.label} className="ar-orbit-item" style={{transform:'rotate('+item.deg+'deg) translateY(-210px)'}}>
-          <div className={'ar-orbit-card ar-tone-'+item.color}><span className="ar-orbit-icon"><Icon size={21}/></span><strong>{item.label}</strong><small>{item.sub}</small></div>
-        </div>;
-      })}
-    </div>
-    <div className="ar-orbit-floating ar-floating-first">3 experiências integradas</div>
-    <div className="ar-orbit-floating ar-floating-second">ecossistema conectado</div>
-    <div className="ar-orbit-caption">COMPOSIÇÃO VISUAL · NÃO REPRESENTA MÉTRICAS REAIS</div>
+  return <div className="ar-stage" aria-hidden="true">
+    <div className="ar-stage-light"/>
+    <div className="ar-stage-horizon"/>
+    <img className="ar-stage-symbol" src="/gestaofacil-symbol.svg" width="440" height="440" alt="" />
+    <img className="ar-stage-reflection" src="/gestaofacil-symbol.svg" width="440" height="440" alt="" />
+    <div className="ar-stage-note ar-stage-market"><Store size={19}/><span><strong>Vitrine pública</strong><small>Produtos e lojas</small></span></div>
+    <div className="ar-stage-note ar-stage-operation"><Layers3 size={19}/><span><strong>Sua operação</strong><small>Equipe e gestão</small></span></div>
+    <div className="ar-stage-caption"><span/> GESTÃOFÁCIL VENDAS</div>
   </div>;
 }
 
@@ -186,12 +167,13 @@ export default function ArenaExperience({
 
     <main id="gf-main" tabIndex={-1}>
       <section className="ar-hero" id="top" ref={heroRef}>
+        <img className="ar-hero-scenery" src="/resources/arena/hero-stage.jpg" width="1568" height="672" fetchPriority="high" alt="" />
         <div className="ar-aurora ar-aurora-one"/><div className="ar-aurora ar-aurora-two"/><div className="ar-aurora ar-aurora-three"/>
         <div className="ar-hero-grid"/>
         <div className="ar-hero-glow" ref={heroGlowRef} aria-hidden="true"/>
         <div className="ar-container ar-hero-layout">
           <div className={'ar-hero-copy '+(ready?'is-ready':'')}>
-            <div className="ar-kicker"><span className="ar-kicker-dot"/> COMÉRCIO DIGITAL · INTELIGÊNCIA ARTIFICIAL</div>
+            <div className="ar-kicker"><span className="ar-kicker-dot"/> COMÉRCIO DIGITAL · GESTÃO CONECTADA</div>
             <h1>
               <span className="ar-reveal-word">Sua operação</span>{' '}
               <span className="ar-reveal-word">comercial,</span>{' '}
@@ -199,7 +181,7 @@ export default function ArenaExperience({
               <span className="ar-reveal-word">e</span>{' '}
               <span className="ar-reveal-word ar-gradient-ai">inteligente.</span>
             </h1>
-            <p>Marketplace, SaaS comercial e inteligência de negócios reunidos em uma só experiência. Produtos, vendedores e afiliados conectados em uma plataforma feita para crescer.</p>
+            <p>Sua vitrine pública e sua operação comercial no mesmo lugar. Organize produtos, lojas, afiliados e registros financeiros com clareza.</p>
             <div className="ar-hero-actions">
               <ArrowLink onClick={isSignedIn?onEnter:onSignIn}>{isSignedIn?'Acessar meu painel':'Começar agora'}</ArrowLink>
               <button className="ar-btn ar-btn-outline" onClick={()=>goTo('catalogo')}>Explorar marketplace <ArrowRight size={17}/></button>
@@ -297,7 +279,7 @@ export default function ArenaExperience({
           </div>
           <div className="ar-radar-interface">
             <div className="ar-radar-head"><span><i/> RADAR · ESTRUTURA INICIAL</span><small>Sem conexão oficial</small></div>
-            <div className="ar-radar-visual"><span className="ar-radar-ring ring-one"/><span className="ar-radar-ring ring-two"/><span className="ar-radar-ring ring-three"/><span className="ar-radar-line"/><span className="ar-radar-center"><Radar size={29}/><small>ANÁLISE</small></span></div>
+            <div className="ar-radar-visual"><span className="ar-radar-ring ar-ring-one"/><span className="ar-radar-ring ar-ring-two"/><span className="ar-radar-ring ar-ring-three"/><span className="ar-radar-line"/><span className="ar-radar-center"><Radar size={29}/><small>ANÁLISE</small></span></div>
             <div className="ar-radar-data">{kpis.map(it=><div key={it.label}><small>{it.label}</small><strong>{it.value}</strong><span>{it.note}</span></div>)}</div>
             <p className="ar-radar-disclaimer">Painel ilustrativo de critérios. Nenhum gráfico ou resultado financeiro foi fabricado.</p>
           </div>

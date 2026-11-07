@@ -10,6 +10,8 @@ A branch `design/arena-visual-refinement` contém a recuperação da base e uma 
 
 Consulte [a revisão e as limitações](docs/visual-review.md) antes de executar ou publicar.
 
+A segunda revisão incorpora a direção cinematográfica aprovada e os recursos completos do Arena: [alterações, evidências e limites](docs/arena-cinematic.md). O sistema continua em React/Vite; a configuração Next.js da referência não foi transplantada.
+
 ## Prévia visual local isolada
 
 ```powershell

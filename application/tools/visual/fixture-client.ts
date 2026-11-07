@@ -7,7 +7,7 @@ const blocked=async()=>{throw new Error('Prévia visual: gravações e autentica
 export const auth={getUser:async()=>new URLSearchParams(location.search).has('signedOut')?null:user,signInWithRedirect:blocked,signOut:blocked};
 export const api={
   get:async(path:string)=>{
-    if(path.startsWith('/api/v2/catalog'))return {data:{items:[],nextCursor:null}};
+    if(path.startsWith('/api/v2/catalog'))return {data:{items:new URLSearchParams(location.search).has('catalogFixture')?[product]:[],nextCursor:null}};
     if(path.startsWith('/api/v2/workspace'))return {data:{organization:org,organizations:[org],profile:{storeName:org.storeName,accountType:'PJ'},products:[],links:[],finances:[]}};
     if(path.includes('/members'))return {data:{members:[]}};
     if(path.startsWith('/api/v2/stores/'))return {data:{store:org,items:[product]}};
