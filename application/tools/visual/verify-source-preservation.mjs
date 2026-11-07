@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import{execFileSync}from'node:child_process';
+import ts from 'typescript';
+const baseline='a0762b0';
+const files=['backend/index.ts','backend/commerce.ts','backend/v02.ts','package.json','package-lock.json','vite.config.ts','tsconfig.json','appdeploy.auth-login.json','public/gestaofacil-symbol.svg','public/manifest.webmanifest','tests/tests.json','src/GestaoFacil.tsx','src/PremiumDashboard.tsx','src/V02.tsx','src/ArenaSignatureExtras.tsx','tools/visual/fixture-client.ts'];
+const readBase=p=>execFileSync('git',['show',baseline+':application/'+p],{encoding:'utf8',maxBuffer:4e6});
+const checks=files.map(file=>({file,pass:readBase(file).replaceAll('\r\n','\n')===fs.readFileSync(file,'utf8').replaceAll('\r\n','\n')}));
+const props=s=>{const ast=ts.createSourceFile('x.tsx',s,ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);return ast.statements.find(n=>ts.isTypeAliasDeclaration(n)&&n.name.text==='Props')?.getText(ast);};
+checks.push({file:'src/ArenaExperience.tsx',check:'Public Props contract unchanged',pass:props(readBase('src/ArenaExperience.tsx'))===props(fs.readFileSync('src/ArenaExperience.tsx','utf8'))});
+console.log(JSON.stringify({baseline,checks,passed:checks.every(c=>c.pass),note:'Presentation hooks and handlers moved to original Arena components; legacy all-handler textual comparison is not applicable to that component.'},null,2));if(checks.some(c=>!c.pass))process.exitCode=1;

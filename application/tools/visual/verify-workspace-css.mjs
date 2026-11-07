@@ -7,8 +7,8 @@ function operationalRules(text){
  const css=postcss.parse(text);const rules=[];
  css.walkRules(rule=>{
   const context=[];let parent=rule.parent;
-  while(parent&&parent.type!=='root'){if(parent.type==='atrule')context.unshift('@'+parent.name+' '+parent.params);parent=parent.parent;}
-  if(context.some(c=>/@(?:-\w+-)?keyframes (?:ar-|aro-|vr-)/.test(c)))return;
+  while(parent&&parent.type!=='root'){if(parent.type==='rule'&&parent.selector?.includes('.arena-app'))return;if(parent.type==='atrule')context.unshift('@'+parent.name+' '+parent.params);parent=parent.parent;}
+  if(context.some(c=>/@(?:-\w+-)?keyframes (?:ar-|aro-|vr-|gf-source-)/.test(c)))return;
   const ast=selectorParser().astSync(rule.selector);
   for(const selector of [...ast.nodes]){
    let landing=false;selector.walkClasses(c=>{if(c.value==='arena-app'||c.value==='gf-visual-release'||/^(ar-|aro-)/.test(c.value))landing=true;});

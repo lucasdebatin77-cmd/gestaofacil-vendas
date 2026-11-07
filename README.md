@@ -23,3 +23,5 @@ npm run dev -- --config tools/visual/vite.preview.config.mjs
 Essa configuração usa fixtures sintéticas identificadas na tela e bloqueia todas as gravações. Não substitui o SDK nem a autenticação do aplicativo real. Não use a saída `.preview-dist` em produção.
 
 O build padrão depende de `@appdeploy/client`, fornecido pela plataforma e ausente no export local. O manifesto original foi preservado.
+
+Correção após revisão de fidelidade: [Arena original recuperado](docs/arena-source-fidelity.md).
